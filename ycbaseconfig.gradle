@@ -1,0 +1,98 @@
+// 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+
+// Bintray
+Properties localProperties = new Properties()
+localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+
+ext{
+    STORE_PASSWORD=properties.getProperty("password")
+    KEY_ALIAS=properties.getProperty("alias")
+    KEY_PASSWORD=STORE_PASSWORD
+
+    ES={
+         exclude group: 'com.android.support'
+    }
+ 
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 10
+        versionName '1.0'
+
+        multiDexEnabled true
+        resConfigs "zh"
+
+        ndk {
+            abiFilters "armeabi"//, "armeabi-v7a"//, "x86"//, "x86_64"
+        }
+
+        vectorDrawables.generatedDensities = ['xhdpi']
+        vectorDrawables.useSupportLibrary = true 
+        
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["moduleName": project.name]
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('')
+            storePassword STORE_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            v2SigningEnabled false
+        }
+
+
+    }
+
+    buildTypes {
+        release {
+            zipAlignEnabled true
+            debuggable false    //发布应用之前要确保关闭debug属性,即false
+
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            zipAlignEnabled true
+        }
+    }
+    
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+        preDexLibraries = false
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        disable "MissingTranslation", "RtlHardcoded", "RtlSymmetry"
+    }
+    
+    dependencies {
+
+    }
+    
+    
+}
+
+
+

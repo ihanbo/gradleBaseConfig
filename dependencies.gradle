@@ -1,0 +1,77 @@
+ext {
+  
+    //项目根目录
+    ROOT_DIR = rootProject.rootDir.absolutePath + "/"
+
+    // 支持包版本
+    SUPPORT_VERSION = '25.3.1'
+
+
+    DEP = [
+           
+            
+            //fast-json
+            UMENG_SOCIAL:                   "com.umeng_social_sdk_res_lib:social:6.9.0.3",
+            EVENTBUS:                       "org.greenrobot:eventbus:3.1.1",
+            
+            LOTTIE:                         "com.airbnb.android:lottie:2.5.1",
+            
+
+            
+            //butterknife
+            BUTTERKNIFE:                    "com.jakewharton:butterknife:8.4.0",
+            BUTTERKNIFE_COMPILER:           "com.jakewharton:butterknife-compiler:8.4.0",
+            
+            OCR:[
+                ocr:                        "com.bitauto.lib:ocr:1.0.0-SNAPSHOT",
+                ocr_ui:                     "com.bitauto.lib:ocr_ui:1.0.0-SNAPSHOT"
+            ],
+            
+            RONG:[
+                imlib:                      "com.bitauto.lib.im:rong-imlib:master43500051534230599-SNAPSHOT",
+                imkit:                      "com.bitauto.lib.im:rong-imkit:master43500051534230861-SNAPSHOT",
+                rong_im:                    "com.bitauto.lib.im:rong_im:201808171107-SNAPSHOT"
+                
+            ],
+            
+
+            SUPPORT:[
+                    supportV4:              "com.android.support:support-v4:${SUPPORT_VERSION}",
+                    appcompatV7:            "com.android.support:appcompat-v7:${SUPPORT_VERSION}",
+                    cardviewV7:             "com.android.support:cardview-v7:${SUPPORT_VERSION}",
+                    recyclerView:           "com.android.support:recyclerview-v7:${SUPPORT_VERSION}",
+                    design:                 "com.android.support:design:${SUPPORT_VERSION}",
+                    annotations:            "com.android.support:support-annotations:${SUPPORT_VERSION}",
+                    constraint:             "com.android.support.constraint:constraint-layout:1.1.2",
+                    multidex:               "com.android.support:multidex:1.0.3"
+            ],
+            
+            
+            RETROFIT:[
+                retrofit2:                  "com.squareup.retrofit2:retrofit:2.4.0",
+                converter_gson:             "com.squareup.retrofit2:converter-gson:2.4.0",
+                adapter_rxjava2:            "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+            ],
+
+            RX:[
+                rxjava2:                    "io.reactivex.rxjava2:rxjava:2.1.6",
+                rxandroid:                  "io.reactivex.rxjava2:rxandroid:2.0.1",
+                rxlifecycle:                "com.trello.rxlifecycle2:rxlifecycle-components:2.1.0"
+            ],
+            
+            OK:[
+                okhttp:                     "com.squareup.okhttp3:okhttp:3.10.0",
+                stetho:                     "com.facebook.stetho:stetho-okhttp3:1.5.0"
+            ],
+            
+            GLIDE:[
+                glide:                      "com.github.bumptech.glide:glide:4.7.1",
+                annotation:                 "com.github.bumptech.glide:compiler:4.7.1",
+                ok:                         "com.github.bumptech.glide:okhttp3-integration:4.7.1"
+            ]
+
+    ]
+
+
+}
+
