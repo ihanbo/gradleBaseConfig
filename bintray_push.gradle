@@ -1,0 +1,39 @@
+//gradle.properties里额外配置：
+
+//BT_GROUP      包名：com.yiche.xx
+//BT_ARTIFACT   项目名称：yicheuser，要和项目本地目录名一致
+//BT_VERSION    版本：1.0
+//BT_DESC       项目介绍描述：这是xxx的
+
+
+ext {
+    bintrayRepo = 'baddog'
+    bintrayName = 'bobofish'
+
+    publishedGroupId = BT_GROUP
+    artifact = BT_ARTIFACT          //需和项目目录名保持一致，不然上传会有问题
+
+
+    libraryName = BT_ARTIFACT
+    libraryDescription = BT_DESC
+
+    siteUrl = 'https://github.com/ihanbo'
+    gitUrl = 'https://github.com/ihanbo'
+
+    libraryVersion = BT_VERSION
+
+    developerId = 'hanbo'
+    developerName = 'hanbo'
+    developerEmail = 'hanbov5@gmail@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+//gradle init
+//gradle uploadArchives 
