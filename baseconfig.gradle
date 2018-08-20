@@ -1,10 +1,11 @@
 // 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
 
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    
 ext{
-    Properties localProperties = new Properties()
-    localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
-
+   
     STORE_PASSWORD=localProperties.getProperty("password")
     KEY_ALIAS=localProperties.getProperty("alias")
     KEY_PASSWORD=STORE_PASSWORD
