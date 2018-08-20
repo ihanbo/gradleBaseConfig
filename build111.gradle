@@ -1,0 +1,75 @@
+apply plugin: 'groovy'
+
+buildscript {
+    repositories {
+        jcenter()
+    
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        //jcenter
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+}
+
+ext {
+    bintrayRepo = 'baddog'
+    bintrayName = 'ycuploadnexus'
+
+    publishedGroupId = 'com.yiche.upload'
+    libraryName = 'uplod to nexus '
+    artifact = 'ycupload'
+
+    libraryDescription = 'A gradle plugin for buid lite component'
+
+    siteUrl = 'https://github.com/ihanbo/'
+    gitUrl = 'https://github.com/ihanbo/'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'hanbo'
+    developerName = 'Yiche'
+    developerEmail = 'hanbov5@gmail@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+dependencies {
+    compile 'com.android.tools.build:gradle:2.2.3'
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../dd_repo'))
+        }
+    }
+}
