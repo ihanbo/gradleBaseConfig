@@ -1,4 +1,5 @@
-// 各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+//各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
+//keystore目录指向为：项目根目录/keystore
 
 
 Properties properties = new Properties()
@@ -46,7 +47,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/hanskeystore')
+            storeFile file(rootProject.rootDir.absolutePath+"/keystore")
             storePassword STORE_PASSWORD
             keyAlias KEY_ALIAS
             keyPassword KEY_PASSWORD
