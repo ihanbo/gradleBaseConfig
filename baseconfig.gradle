@@ -46,7 +46,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('')
+            storeFile file('https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/hanskeystore')
             storePassword STORE_PASSWORD
             keyAlias KEY_ALIAS
             keyPassword KEY_PASSWORD

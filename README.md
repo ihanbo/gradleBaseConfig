@@ -1,12 +1,12 @@
 ### 所有配置地址：
 1.maven：<br>
-http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/mvnpush.gradle
+//
 <br>
 2.基础build.gradle<br>
-http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/ycbaseconfig.gradle
+https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/baseconfig.gradle
 <br>
 3.依赖管理<br>
-http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/dependencies.gradle
+https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gradle
 <br>
 
 ---
