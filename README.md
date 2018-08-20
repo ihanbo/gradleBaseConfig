@@ -17,13 +17,13 @@ https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gr
 使用：
 在`module`的`build.gradle`里：添加
 ```gradle
-apply from: 'http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/ycbaseconfig.gradle'
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/baseconfig.gradle'
 ```
 示例：公共部分已配好，只需配个性化的，当然也可以复写公共的
 ```gradle
-apply plugin: 'com.android.application'
-apply from: 'http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/ycbaseconfig.gradle'
-
+...
 android {
     defaultConfig {
 	    //module的额外配置
@@ -41,6 +41,6 @@ dependencies {
 ### 2. 依赖配置：
 在根项目(根目录)的`build.gradle`里添加：
 ```gradle
-apply from: 'http://gitlab.bitautotech.com/hanbo1/GradleConfig/raw/master/dependencies.gradle'
+apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gradle'
 ```
 所有项目依赖版本再次统一管理，当然也可以配到`module`的`build.gradle`里
