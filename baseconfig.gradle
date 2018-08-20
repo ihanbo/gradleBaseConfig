@@ -6,8 +6,8 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
     
 ext{
    
-    STORE_PASSWORD=localProperties.getProperty("password")
-    KEY_ALIAS=localProperties.getProperty("alias")
+    STORE_PASSWORD=properties.getProperty("password")
+    KEY_ALIAS=properties.getProperty("alias")
     KEY_PASSWORD=STORE_PASSWORD
 
     ES={
