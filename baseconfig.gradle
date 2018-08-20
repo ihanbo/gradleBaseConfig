@@ -6,8 +6,8 @@ localProperties.load(project.rootProject.file('local.properties').newDataInputSt
 
 
 ext{
-    STORE_PASSWORD=properties.getProperty("password")
-    KEY_ALIAS=properties.getProperty("alias")
+    STORE_PASSWORD=localProperties.getProperty("password")
+    KEY_ALIAS=localProperties.getProperty("alias")
     KEY_PASSWORD=STORE_PASSWORD
 
     ES={
