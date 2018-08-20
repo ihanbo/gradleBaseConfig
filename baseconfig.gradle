@@ -88,8 +88,12 @@ android {
     }
     
     dependencies {
-
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation DEP.SUPPORT.appcompatV7
+        implementation DEP.SUPPORT.constraint
+        implementation DEP.SUPPORT.multidex
     }
+
     
     
 }
