@@ -1,5 +1,6 @@
 //gradle.properties里额外配置：
 
+
 //BT_GROUP      包名：com.yiche.xx
 //BT_ARTIFACT   项目名称：yicheuser，要和项目本地目录名一致
 //BT_VERSION    版本：1.0
