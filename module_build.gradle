@@ -1,5 +1,8 @@
 //各个组件所使用的基本配置。定义在此。便于对多版本进行统一修改更新
 //keystore目录指向为：项目根目录/keystore
+//local.properties里配置keystore的密码和alias
+//password=xxx
+//alias=xxx
 
 
 Properties properties = new Properties()
