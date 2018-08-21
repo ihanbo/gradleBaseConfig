@@ -1,9 +1,9 @@
 ### 所有配置地址：
 1.bintray：<br>
-//
+https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/bintray_push.gradle
 <br>
 2.基础build.gradle<br>
-https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/baseconfig.gradle
+https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/module_build.gradle
 <br>
 3.依赖管理<br>
 https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gradle
@@ -17,8 +17,6 @@ https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gr
 使用：
 在`module`的`build.gradle`里：添加
 ```gradle
-//apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
 apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/baseconfig.gradle'
 ```
 示例：公共部分已配好，只需配个性化的，当然也可以复写公共的
@@ -59,3 +57,19 @@ bintray.apikey=xxx
 apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gradle'
 ```
 所有项目依赖版本再次统一管理，当然也可以配到`module`的`build.gradle`里
+
+
+
+### 示例：
+```
+apply plugin: 'com.android.library'
+ext {
+    BT_GROUP = ''
+    BT_ARTIFACT = ''
+    BT_VERSION = '1.3'
+    BT_DESC = ''
+}
+apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/baseconfig.gradle'
+apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/bintray_push.gradle'
+
+```
