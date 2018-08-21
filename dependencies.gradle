@@ -10,7 +10,7 @@ ext {
     DEP = [
            
             
-            //fast-json
+            APP_HOLDER:                     "com.hans.applicationholder:applicationholder:1.3",
             UMENG_SOCIAL:                   "com.umeng_social_sdk_res_lib:social:6.9.0.3",
             EVENTBUS:                       "org.greenrobot:eventbus:3.1.1",
             

@@ -1,5 +1,5 @@
 ### 所有配置地址：
-1.maven：<br>
+1.bintray：<br>
 //
 <br>
 2.基础build.gradle<br>
@@ -38,7 +38,22 @@ dependencies {
     compile  "${DEP.SUPPORT.appcompatV7}"
 }
 ```
-### 2. 依赖配置：
+### 2. 关于上传Bintray：
+在`module`的`build.gradle`里：前面添加
+```gradle
+ext {
+    BT_GROUP = 'com.xx.xx'
+    BT_ARTIFACT = 'xxxx'
+    BT_VERSION = '1.0'
+    BT_DESC = '可有可无'
+}
+```
+在`local.properties`里配置:
+```gradle
+bintray.user=xxx
+bintray.apikey=xxx
+```
+### 3. 依赖配置：
 在根项目(根目录)的`build.gradle`里添加：
 ```gradle
 apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/dependencies.gradle'
