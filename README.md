@@ -37,7 +37,18 @@ dependencies {
 }
 ```
 ### 2. 关于上传Bintray：
-在`module`的`build.gradle`里：前面添加
+1. 在项目根目录的`build.gradle`添加编译依赖:
+```gradle
+buildscript {
+    ...
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+```
+2. 在`module`的`build.gradle`里：前面添加
 ```gradle
 ext {
     BT_GROUP = 'com.xx.xx'
@@ -45,8 +56,9 @@ ext {
     BT_VERSION = '1.0'
     BT_DESC = '可有可无'
 }
+apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/bintray_push.gradle'
 ```
-在`local.properties`里配置:
+3. 在`local.properties`里配置:
 ```gradle
 bintray.user=xxx
 bintray.apikey=xxx
