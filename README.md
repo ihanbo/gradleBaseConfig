@@ -63,6 +63,11 @@ apply from: 'https://raw.githubusercontent.com/ihanbo/gradleBaseConfig/master/bi
 bintray.user=xxx
 bintray.apikey=xxx
 ```
+4. 执行命令：
+```gradle
+gradle install
+gradle bintrayUpload 
+```
 ### 3. 依赖配置：
 在根项目(根目录)的`build.gradle`里添加：
 ```gradle
