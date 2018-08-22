@@ -3,8 +3,10 @@ ext {
     //项目根目录
     ROOT_DIR = rootProject.rootDir.absolutePath + "/"
 
-    // 支持包版本
-    SUPPORT_VERSION = '25.3.1'
+    
+    SUPPORT_VERSION = '25.3.1'  // 支持包版本
+   
+    ROOM_VERSION = "1.1.1"    //Room版本
 
 
     DEP = [
@@ -68,6 +70,12 @@ ext {
                 glide:                      "com.github.bumptech.glide:glide:4.7.1",
                 annotation:                 "com.github.bumptech.glide:compiler:4.7.1",
                 ok:                         "com.github.bumptech.glide:okhttp3-integration:4.7.1"
+            ],
+            
+            ROOM:[
+                room:                       "android.arch.persistence.room:runtime:$ROOM_VERSION",
+                roomap:                     "android.arch.persistence.room:compiler:$ROOM_VERSION",
+                roomrx:                     "android.arch.persistence.room:rxjava2:$ROOM_VERSION"
             ]
 
     ]
