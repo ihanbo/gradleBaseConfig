@@ -35,7 +35,7 @@ android {
         resConfigs "zh"
 
         ndk {
-            abiFilters "armeabi"//, "armeabi-v7a"//, "x86"//, "x86_64"
+            abiFilters "armeabi","x86"  //, "armeabi-v7a"//, "x86"//, "x86_64"
         }
 
         vectorDrawables.generatedDensities = ['xhdpi']
