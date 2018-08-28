@@ -91,14 +91,31 @@ android {
         disable "MissingTranslation", "RtlHardcoded", "RtlSymmetry"
     }
     
+    //configurations.all {
+    //    transitive = false
+    //}
+    
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (requested.name.startsWith("multidex")) {
+                    details.useVersion '1.0.3'
+                } else {
+                    details.useVersion SUPPORT_VERSION
+                }
+            }else if(requested.group == 'com.android.support.constraint'){
+                details.useVersion '1.1.2'
+            }
+        }
+    }
+
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         implementation DEP.SUPPORT.appcompatV7
         implementation DEP.SUPPORT.constraint
         implementation DEP.SUPPORT.multidex
     }
-
-    
     
 }
 
