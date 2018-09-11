@@ -4,7 +4,7 @@ ext {
     ROOT_DIR = rootProject.rootDir.absolutePath + "/"
 
     
-    SUPPORT_VERSION = '25.3.1'  // 支持包版本
+    SUPPORT_VERSION = '26.1.0'  // 支持包版本
    
     ROOM_VERSION = "1.1.1"    //Room版本
 
