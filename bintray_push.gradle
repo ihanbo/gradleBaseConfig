@@ -17,13 +17,13 @@
 
 ext {
     bintrayRepo = 'baddog'
-    bintrayName = BT_ARTIFACT       //重要：在bintray上的包名，可以和artifact保持一致
+    bintrayName = (BT_ARTIFACT==null? ${project.name}:BT_ARTIFACT)       //重要：在bintray上的包名，可以和artifact保持一致
 
     publishedGroupId = BT_GROUP
     artifact = ${project.name}      //重要：需和项目目录名保持一致，不然上传会有问题
 
 
-    libraryName = BT_ARTIFACT                                                //项目名称，可以和artifact一样
+    libraryName = (BT_ARTIFACT==null? ${project.name}:BT_ARTIFACT)           //项目名称，可以和artifact一样
     libraryDescription = (BT_DESC==null? "here is description!":BT_DESC)     //项目描述
 
     siteUrl = 'https://github.com/ihanbo'
