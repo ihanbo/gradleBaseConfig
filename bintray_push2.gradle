@@ -5,9 +5,10 @@
 //build.gradle里额外配置：
 //ext {
 //    BT_GROUP = 'com.xx.xx'
-//    BT_ARTIFACT = 'xxxx'  //默认取项目包名，最好不配置，以防出各种个问题
 //    BT_VERSION = '1.0'
 //    BT_DESC = '可有可无'
+
+//    BT_ARTIFACT = 'xxxx'  //默认取项目包名，这个最好别配置，以防出各种问题
 //}
 
 //上传命令
