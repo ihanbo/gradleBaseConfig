@@ -1,0 +1,45 @@
+//local.properties里配置
+//bintray.user=xxx
+//bintray.apikey=xxx
+
+//build.gradle里额外配置：
+//ext {
+//    BT_GROUP = 'com.xx.xx'
+//    BT_ARTIFACT = 'xxxx'
+//    BT_VERSION = '1.0'
+//    BT_DESC = '可有可无'
+//}
+
+//上传命令
+//gradle install
+//gradle bintrayUpload 
+
+
+ext {
+    bintrayRepo = 'baddog'
+    bintrayName = (BT_ARTIFACT==null? "${project.name}":BT_ARTIFACT)       //重要：在bintray上的包名，可以和artifact保持一致
+
+    publishedGroupId = BT_GROUP
+    artifact = "${project.name}"      //重要：需和项目目录名保持一致，不然上传会有问题
+
+
+    libraryName = (BT_ARTIFACT==null? "${project.name}":BT_ARTIFACT)           //项目名称，可以和artifact一样
+    libraryDescription = (BT_DESC==null? "here is description!":BT_DESC)     //项目描述
+
+    siteUrl = 'https://github.com/ihanbo'
+    gitUrl = 'https://github.com/ihanbo'
+
+    libraryVersion = BT_VERSION
+
+    developerId = 'hanbo'
+    developerName = 'hanbo'
+    developerEmail = 'hanbov5@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
