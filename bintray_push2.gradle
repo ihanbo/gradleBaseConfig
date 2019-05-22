@@ -5,7 +5,7 @@
 //build.gradle里额外配置：
 //ext {
 //    BT_GROUP = 'com.xx.xx'
-//    BT_ARTIFACT = 'xxxx'
+//    BT_ARTIFACT = 'xxxx'  //默认取项目包名，最好不配置，以防出各种个问题
 //    BT_VERSION = '1.0'
 //    BT_DESC = '可有可无'
 //}
@@ -24,7 +24,7 @@ ext {
 
 
     libraryName = (BT_ARTIFACT==null? "${project.name}":BT_ARTIFACT)           //项目名称，可以和artifact一样
-    libraryDescription = (BT_DESC==null? "here is description!":BT_DESC)     //项目描述
+    libraryDescription = (BT_DESC==null? "here is description!":BT_DESC)       //项目描述
 
     siteUrl = 'https://github.com/ihanbo'
     gitUrl = 'https://github.com/ihanbo'
