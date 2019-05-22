@@ -4,9 +4,14 @@
 
 //build.gradle里额外配置：
 //ext {
-//    BT_GROUP = 'com.xx.xx' //ARTIFACT取项目名，设成其他上传会有问题
-//    BT_VERSION = '1.0'
-//    BT_DESC = '可有可无'
+
+//    BT_GROUP = 'com.xx.xx'        //必须，ARTIFACT默认取项目名，设成其他上传会有问题
+//    BT_VERSION = '1.0'            //必须
+
+
+//    BT_DESC = '可有可无'           //非必须,描述     
+//    BT_BINTRAY_NAME = 'xxxx'      //非必须，一般不用设置，默认取项目名     
+//    BT_LIBRARY_NAME = 'xxxx'      //非必须，一般不用设置，默认取项目名     
 
 //}
 
@@ -17,15 +22,16 @@
 
 ext {
     BT_ARTIFACT = "${project.name}"
+    
     bintrayRepo = 'baddog'
-    bintrayName = BT_ARTIFACT      //重要：在bintray上的包名，可以和artifact保持一致
+    bintrayName = project.hasProperty("BT_BINTRAY_NAME")? BT_BINTRAY_NAME:BT_ARTIFACT    //重要：在bintray上的包名，可以和artifact保持一致
 
     publishedGroupId = BT_GROUP
     artifact = "${project.name}"      //重要：需和项目目录名保持一致，不然上传会有问题
 
 
-    libraryName = BT_ARTIFACT          //项目名称，可以和artifact一样
-    libraryDescription = BT_DESC       //项目描述
+    libraryName =  project.hasProperty("BT_LIBRARY_NAME")? BT_LIBRARY_NAME:BT_ARTIFACT    //项目名称，可以和artifact一样
+    libraryDescription =  project.hasProperty("BT_DESC")? BT_DESC:"here is project desc"  //项目描述
 
     siteUrl = 'https://github.com/ihanbo'
     gitUrl = 'https://github.com/ihanbo'
